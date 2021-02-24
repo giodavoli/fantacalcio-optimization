@@ -39,3 +39,52 @@ The constraints for this linear optimization are:
 Our aim is to maximize the number of points the team is worth, so the sum of the mean Fantasy points that each player does by game, within the constraints we are setting.
 
 ### Results
+The results for the first team that the linear solver selected, using the estimated price in a private league with 10 players and 500 Credits.
+
+Name | Team | Goalkeeper | Defender | Midfielder | Forward | 500K(10) | Mf | Pg
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+MUSSO |  Udinese | 1 | 0 | 0 | 0 | 21.38 | 5.08 | 38
+GAGLIOLO | Parma | 0 | 1 | 0 | 0 | 14.08 | 6.27 | 32
+DE VRIJ | Inter |         0   |     1     |     0   |    0   |   29.25 | 6.60 | 34
+GOSENS | Atalanta |         0   |     1     |     0   |    0   |   39.50 | 7.38 | 34
+NAINGGOLAN | Cagliari |         0   |     0     |     1   |    0   |   24.73 | 7.19 | 26
+MKHITARYAN | Roma |         0   |     0     |     1   |    0   |   41.74 | 7.59 | 22
+KULUSEVSKI | Juventus |         0   |     0     |     1   |    0   |   47.23 | 7.43 | 36
+LUIS ALBERTO | Lazio |         0   |     0     |     1   |    0   |   50.87 | 7.31 | 36
+BERARDI | Sassuolo |         0   |     0     |     0   |    1   |   48.22 | 7.85 | 31
+MURIEL  | Atalanta |         0   |     0     |     0   |    1   |   57.78 | 7.98 | 34
+CAPUTO  | Sassuolo |         0   |     0     |     0   |    1   |   74.96 | 8.31 | 36
+
+The reserve Goalkeeper will be
+
+Name | Team | Goalkeeper | Defender | Midfielder | Forward | 500K(10) | Mf | Pg
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+SCUFFET    |  Udinese | 1 | 0 | 0 | 0 | 0 | 6.08 | 0
+
+The remaining team is:
+
+
+Name | Team | Goalkeeper | Defender | Midfielder | Forward | 500K(10) | Mf | Pg
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+GOLDANIGA   |  Genoa      |    0     |   1       |   0    |   0   |    0.49 |5.68 |13
+BALDURSSON   |  Bologna      |    0     |   0       |   1    |   0   |    0.44| 5.83  |7
+LAURINI  |  Parma      |    0     |   1       |   0    |   0   |    0.53  |5.73 | 15
+CEPPITELLI  | Cagliari      |    0     |   1       |   0    |   0   |    1.72 |6.13 |16
+DEPAOLI  |   Benevento      |    0     |   1       |   0    |   0   |    3.00 |5.78 |29
+BANI  |    Parma      |    0     |   1       |   0    |   0   |    5.04 |6.19 |27
+IONITA | Benevento      |    0     |   0       |   1    |   0   |    2.13 |5.66 |34
+CATALDI    |  Lazio      |    0     |   0       |   1    |   0   |    1.06 |6.22 |21
+BORJA VALERO  | Fiorentina     |     0    |    0      |    1   |    0  |     5.60 |6.40 |19
+HARASLIN   | Sassuolo     |     0    |    0      |    0   |    1  |     0.53| 6.44 |11
+PINAMONTI   |   Inter       |   0      |  0        |  0     |  1    |   5.74 |6.12 |32
+CORNELIUS   |   Parma       |   0      |  0        |  0     |  1    |  17.46 |7.83 |26
+
+### Limitations and future work
+The first limitatioin of this method is that we cannot consider players from promoting team, players that are buyed in the market from different leagues and players that change team and will not perform as the previous year (i.e Naingollan and Pinamonti in 19/20 season were in loan at Cagliari and Genoa, in 20/21 season they went back to Inter where they will find less space)
+Another thing that a good player would never done is having two Forward from the same team, Caputo and Berardi are probably two great (undervalued) forward but it is better to diversify our team.
+It was a very funny project and I have learned a lot of things, for example the optimum solution select a balanced team and not a mediocre team with a great striker (as Ronaldo, Lukaku,...)
+This work can be a guideline for your next league to see if some players are undervalued, to limitate our impatiatience during the auction. 
+
+In the future works I intend to change the Objective function, I am trying to create a prediction of the score of each player for the next season (probably trough deep learning model as LSTM), in this way I will not relay only on the last season performance. Moreover it would be interesting try to do a reinforcement learning problem to teach an algorithm the best approach to fantasy auction.
+
+Your team is better or worst than the one selected from the computer?
