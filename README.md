@@ -27,7 +27,7 @@ In the auction every partecipant select a fantasy football squad of 25 players, 
 * 6 Forwards
 
 ### Dataset
-I created the dataset by merging the [Fantacalcio statistics 19/20](https://www.fantacalcio.it/statistiche-serie-a/2019-20/fantacalcio/riepilogo) with the [Estimation of Fantasy Football Auction Prices](https://www.fantacalcio-online.com/it/asta-fantacalcio-stima-prezzi). The first dataset can be easily downloaded , for the second I had to webscrape the data.
+I created the dataset by merging the [Fantacalcio statistics 19/20](https://www.fantacalcio.it/statistiche-serie-a/2019-20/fantacalcio/riepilogo) with the [Estimation of Fantasy Football Auction Prices](https://www.fantacalcio-online.com/it/asta-fantacalcio-stima-prezzi). The first dataset can be easily downloaded , for the second I had to webscrape the data. [webscrape code](https://github.com/giodavoli/optimization-fantacalcio/blob/main/webscraping_price_fanta.py).
 
 ### Constraint
 The constraints for this linear optimization are:
